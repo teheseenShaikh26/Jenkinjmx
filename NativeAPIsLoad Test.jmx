@@ -1,0 +1,3744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.2">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="Content-Type" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Connection</stringProp>
+            <stringProp name="Header.value">keep-alive</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Accept-Encoding</stringProp>
+            <stringProp name="Header.value">gzip, deflate, br</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Accept</stringProp>
+            <stringProp name="Header.value">*/*</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Basic UlRTUDpSVFNQ</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="url" elementType="Argument">
+            <stringProp name="Argument.name">url</stringProp>
+            <stringProp name="Argument.value">3788fixu2h.execute-api.ap-south-1.amazonaws.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="seq-No" elementType="Argument">
+            <stringProp name="Argument.name">seq-No</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.value">${__UUID}</stringProp>
+          </elementProp>
+          <elementProp name="idfc-seq-no" elementType="Argument">
+            <stringProp name="Argument.name">idfc-seq-no</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.value">IDF${__UUID}</stringProp>
+          </elementProp>
+          <elementProp name="icici-seq-no" elementType="Argument">
+            <stringProp name="Argument.name">icici-seq-no</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.value">ICI${__UUID}</stringProp>
+          </elementProp>
+          <elementProp name="rnstr" elementType="Argument">
+            <stringProp name="Argument.name">rnstr</stringProp>
+            <stringProp name="Argument.value">ICI${uniqueStr}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="devid" elementType="Argument">
+            <stringProp name="Argument.value">${__RandomString(10,1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ,)}</stringProp>
+            <stringProp name="Argument.name">devid</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="mob" elementType="Argument">
+            <stringProp name="Argument.value">${__RandomString(10,0123456789,)}</stringProp>
+            <stringProp name="Argument.name">mob</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>false</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>true</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>true</responseData>
+            <samplerData>true</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>true</responseHeaders>
+            <requestHeaders>true</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <fileName>true</fileName>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <boolProp name="ResultCollector.success_only_logging">true</boolProp>
+      </ResultCollector>
+      <hashTree/>
+      <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <longProp name="interval_grouping">1000</longProp>
+        <boolProp name="graph_aggregated">true</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+      </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>true</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>true</responseData>
+            <samplerData>true</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>true</responseHeaders>
+            <requestHeaders>true</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <fileName>true</fileName>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.delayedStart">false</boolProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">10</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1 create-device -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+        &quot;device-id&quot;: &quot;${__UUID}&quot;,&#xd;
+        &quot;os&quot;: &quot;iOS&quot;,&#xd;
+        &quot;os-version&quot;: &quot;12&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;lg&quot;,&#xd;
+        &quot;model&quot;: &quot;dd12345&quot;,&#xd;
+        &quot;version&quot;: &quot;&quot;,&#xd;
+        &quot;location&quot;: &quot;(ddpune)&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;dd123&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;3&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;mobile&quot;: &quot;${mobile}&quot;&#xd;
+    },&#xd;
+    &quot;payload&quot;: {},&#xd;
+     &quot;seq-no&quot;: &quot;${__UUID}&quot;&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/device/create-device</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion-rc" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion-Message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+
+ExtentReports report;
+ExtentTest testLogger;
+
+String resultsPath = &quot;D:\Extentreports&quot;;
+String configPath = &quot;D:\apache-jmeter-5.6.2\lib&quot;;
+String reportPath;
+
+reportPath = resultsPath+&quot;/test2/testing_extRpts_${myTimeinMills}.html&quot;;
+
+report = new ExtentReports(reportPath, true);
+report.loadConfig( new File(configPath+&quot;extent-config.xml&quot;));
+
+testLogger = report.startTest(&quot;Entire Script&quot;);
+testLogger.log(LogStatus.INFO, &quot;This is the API test script for Login&quot;);
+
+report.flush();
+//Thread.sleep(2000);
+//report.close();</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/nativeApi/1 create-device.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="2 List banks -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+        &quot;device-id&quot;: &quot;7FC8039E-A42F-424C-A142-D0071EB01D67&quot;,&#xd;
+        &quot;os&quot;: &quot;ANDROID&quot;,&#xd;
+        &quot;os-version&quot;: &quot;12&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;lg&quot;,&#xd;
+        &quot;model&quot;: &quot;dd12345&quot;,&#xd;
+        &quot;version&quot;: &quot;1.0&quot;,&#xd;
+        &quot;location&quot;: &quot;(ddpune)&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;dd123&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;2&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;abc-profile-id&quot;: &quot;3622&quot;,&#xd;
+        &quot;mobile&quot;: &quot;8888841221&quot;,&#xd;
+        &quot;smpd-user&quot;: 3622&#xd;
+    },&#xd;
+    &quot;payload&quot;: {},&#xd;
+     &quot;seq-no&quot;: &quot;${__UUID}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/account/list-banks</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_RC" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/nativeApi/2 List banks.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3 Get profile -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+        &quot;device-id&quot;: &quot;7FC8039E-A42F-424C-A142-D0071EB01D67&quot;,&#xd;
+        &quot;os&quot;: &quot;IOS&quot;,&#xd;
+        &quot;os-version&quot;: &quot;11&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;SAMSUNG&quot;,&#xd;
+        &quot;model&quot;: &quot;iPhone&quot;,&#xd;
+        &quot;version&quot;: &quot;1.0&quot;,&#xd;
+        &quot;location&quot;: &quot;1234567890&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;fcmToken&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;1&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;abc-profile-id&quot;: &quot;9881711245&quot;,&#xd;
+        &quot;mobile&quot;: &quot;9881711245&quot;,&#xd;
+        &quot;smpd-user&quot;: 3126&#xd;
+    },&#xd;
+    &quot;payload&quot;: {},&#xd;
+     &quot;seq-no&quot;: &quot;${__UUID}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/profile/get</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_RC" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="1 JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/nativeApi/3 Get profile.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4 Send Chat message-${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+&quot;device&quot;: {&#xd;
+       &quot;app-id&quot;: &quot;ddabcone&quot;,&#xd;
+        &quot;device-id&quot;: &quot;7FC8039E-A42F-424C-A142-D0071EB01D67&quot;,&#xd;
+        &quot;os&quot;: &quot;ANDROID&quot;,&#xd;
+        &quot;os-version&quot;: &quot;11&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;lg&quot;,&#xd;
+        &quot;model&quot;: &quot;dd12345&quot;,&#xd;
+        &quot;version&quot;: &quot;1.0&quot;,&#xd;
+        &quot;location&quot;: &quot;(ddpune)&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;dd123&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;dd11&quot;&#xd;
+    },&#xd;
+ &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+&quot;user&quot;: {&#xd;
+&quot;abc-profile-id&quot;: 61,&#xd;
+&quot;mobile&quot;: &quot;9003807854&quot;,&#xd;
+&quot;smpd-user&quot;: 82&#xd;
+},&#xd;
+&quot;payload&quot;: {&#xd;
+&quot;to-participant-smpd-user&quot;: &quot;108&quot;,&#xd;
+&quot;type&quot;: &quot;TEXT&quot;,&#xd;
+&quot;message&quot;: &quot; hi Rahul, &quot;,&#xd;
+&quot;emoji&quot;: &quot;{emoji-name}&quot;&#xd;
+}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/chat/send</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_RC" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="1 JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/nativeApi/4 Send Chat message.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5 Chat History-${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+        &quot;device-id&quot;: &quot;7FC8039E-A42F-424C-A142-D0071EB01D67&quot;,&#xd;
+        &quot;os&quot;: &quot;IOS&quot;,&#xd;
+        &quot;os-version&quot;: &quot;11&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;SAMSUNG&quot;,&#xd;
+        &quot;model&quot;: &quot;iPhone&quot;,&#xd;
+        &quot;version&quot;: &quot;1.0&quot;,&#xd;
+        &quot;location&quot;: &quot;1234567890&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;fcmToken&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;1&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;abc-profile-id&quot;: &quot;9881711245&quot;,&#xd;
+        &quot;mobile&quot;: &quot;9881711245&quot;,&#xd;
+        &quot;smpd-user&quot;: 3126&#xd;
+    },&#xd;
+    &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+    &quot;payload&quot;: {&#xd;
+        &quot;participant-id&quot;: &quot;3605&quot;,&#xd;
+        &quot;type&quot;: &quot;SMPD-PERSONAL-CHAT&quot;,&#xd;
+        &quot;subtype&quot;: &quot;USER&quot;,&#xd;
+        &quot;filter&quot;: {&#xd;
+            &quot;limit&quot;: 50,&#xd;
+            &quot;offset&quot;: 0&#xd;
+        }&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/chat/history</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 32;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_RC" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/nativeApi/5 Chat History.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="6 Remove Vpa-${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.srvtbank.ppi&quot;,&#xd;
+        &quot;device-id&quot;: &quot;B342C3046824D222&quot;,&#xd;
+        &quot;os&quot;: &quot;ANDROID&quot;,&#xd;
+        &quot;os-version&quot;: &quot;11&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;NOKIA&quot;,&#xd;
+        &quot;model&quot;: &quot;123&quot;,&#xd;
+        &quot;version&quot;: &quot;1.0&quot;,&#xd;
+        &quot;location&quot;: &quot;(if available)&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;fcm-token&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;12345678912345&quot;&#xd;
+    },&#xd;
+     &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;abc-profile-id&quot;: &quot;B342C3046824D222&quot;,&#xd;
+        &quot;mobile&quot;: &quot;8344770660&quot;,&#xd;
+        &quot;smpd-user&quot;: 3135&#xd;
+    },&#xd;
+    &quot;payload&quot;: {&#xd;
+        &quot;vpa&quot;: &quot;8344770660@abcuatidfc&quot;&#xd;
+        &#xd;
+    }  &#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/upi/remove-vpa</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile-no&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_RC" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/6 Remove Vpa.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="7 Remove Account-${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+     &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+        &quot;device-id&quot;: &quot;37E68E3E71BABA19&quot;,&#xd;
+        &quot;os&quot;: &quot;ANDROID&quot;,&#xd;
+        &quot;os-version&quot;: &quot;11&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;NOKIA&quot;,&#xd;
+        &quot;model&quot;: &quot;123&quot;,&#xd;
+        &quot;version&quot;: &quot;1.0&quot;,&#xd;
+        &quot;location&quot;: &quot;1234567890&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;token&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;120000012202&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;abc-profile-id&quot;: &quot;DIP12HY3XZ5678&quot;,&#xd;
+        &quot;mobile&quot;: &quot;9970572156&quot;,&#xd;
+        &quot;smpd-user&quot;: 3243&#xd;
+    },&#xd;
+     &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+    &#xd;
+    &quot;payload&quot;: {&#xd;
+        &quot;vpa&quot;: &quot;9970572156-a@icici&quot;,&#xd;
+        &quot;account-id&quot;: 1034&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/upi/remove-account</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_RC" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/7 Remove Account.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="8 fetch metadata -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+            &quot;device-id&quot;: &quot;5EC91954-95EC-4298-BDCA-25C5E9A20116&quot;,&#xd;
+            &quot;os&quot;: &quot;IOS&quot;,&#xd;
+            &quot;os-version&quot;: &quot;12&quot;,&#xd;
+            &quot;manufacture&quot;: &quot;lg&quot;,&#xd;
+            &quot;model&quot;: &quot;dd12345&quot;,&#xd;
+            &quot;version&quot;: &quot;6.0.48&quot;,&#xd;
+            &quot;location&quot;: &quot;(ddpune)&quot;,&#xd;
+            &quot;fcm-token&quot;: &quot;dd123&quot;,&#xd;
+            &quot;sim-slot&quot;: &quot;1&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+          &quot;abc-profile-id&quot;: &quot;9881711245&quot;,&#xd;
+            &quot;mobile&quot;: &quot;9881711245&quot;,&#xd;
+            &quot;smpd-user&quot;: 3126&#xd;
+    },&#xd;
+     &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+    &quot;payload&quot;: {&#xd;
+        &quot;version&quot;: &quot;0&quot;,&#xd;
+        &quot;type&quot;: &quot;upi-tnc&quot;,&#xd;
+        &quot;category&quot;: &quot;tnc&quot;,&#xd;
+        &quot;meta-key&quot;: &quot;ICICI&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/metadata/fetch</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 32;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_RC" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/8 fetch metadata.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="9 Update Profile -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+        &quot;device-id&quot;: &quot;AS141023&quot;,&#xd;
+        &quot;os&quot;: &quot;ANDROID&quot;,&#xd;
+        &quot;os-version&quot;: &quot;12&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;lg&quot;,&#xd;
+        &quot;model&quot;: &quot;dd12345&quot;,&#xd;
+        &quot;version&quot;: &quot;1.0&quot;,&#xd;
+        &quot;location&quot;: &quot;(ddpune)&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;dd123&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;2&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;abc-profile-id&quot;: &quot;3622&quot;,&#xd;
+        &quot;mobile&quot;: &quot;8888841221&quot;,&#xd;
+        &quot;smpd-user&quot;: 3622&#xd;
+    },&#xd;
+     &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+    &quot;payload&quot;: {&#xd;
+        &quot;name&quot;: &quot;DBMS&quot;,&#xd;
+        &quot;email&quot;: &quot;DBMS@gmail.comm&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">3788fixu2h.execute-api.ap-south-1.amazonaws.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/profile/update</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_rc" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/9 Update Profile.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="10 Update Vpa Primary Account -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+   &quot;device&quot;: {&#xd;
+            &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+            &quot;device-id&quot;: &quot;7FC8039E-A42F-424C-A142-D0071EB01D67&quot;,&#xd;
+            &quot;os&quot;: &quot;IOS&quot;,&#xd;
+            &quot;os-version&quot;: &quot;12&quot;,&#xd;
+            &quot;manufacture&quot;: &quot;lg&quot;,&#xd;
+            &quot;model&quot;: &quot;dd12345&quot;,&#xd;
+            &quot;version&quot;: &quot;6.0.48&quot;,&#xd;
+            &quot;location&quot;: &quot;(ddpune)&quot;,&#xd;
+            &quot;fcm-token&quot;: &quot;dd123&quot;,&#xd;
+            &quot;sim-slot&quot;: &quot;1&quot;&#xd;
+        },&#xd;
+        &quot;user&quot;: {&#xd;
+            &quot;abc-profile-id&quot;: &quot;9881711245&quot;,&#xd;
+            &quot;mobile&quot;: &quot;9881711245&quot;,&#xd;
+            &quot;smpd-user&quot;: 3126&#xd;
+        },&#xd;
+        &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+&#xd;
+    &quot;payload&quot;: {&#xd;
+        &quot;account-id&quot;: 743,&#xd;
+        &quot;vpa&quot;: &quot;9881711245-8888@icici&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">3788fixu2h.execute-api.ap-south-1.amazonaws.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/account/update-primary</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 32;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_rc" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/10 Update Vpa Primary Account.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="11 Fetch favorites -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+            &quot;device-id&quot;: &quot;5EC91954-95EC-4298-BDCA-25C5E9A20116&quot;,&#xd;
+            &quot;os&quot;: &quot;IOS&quot;,&#xd;
+            &quot;os-version&quot;: &quot;12&quot;,&#xd;
+            &quot;manufacture&quot;: &quot;lg&quot;,&#xd;
+            &quot;model&quot;: &quot;dd12345&quot;,&#xd;
+            &quot;version&quot;: &quot;6.0.48&quot;,&#xd;
+            &quot;location&quot;: &quot;(ddpune)&quot;,&#xd;
+            &quot;fcm-token&quot;: &quot;dd123&quot;,&#xd;
+            &quot;sim-slot&quot;: &quot;1&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+         &quot;abc-profile-id&quot;: &quot;9881711245&quot;,&#xd;
+            &quot;mobile&quot;: &quot;9881711245&quot;,&#xd;
+            &quot;smpd-user&quot;: 3126&#xd;
+    },&#xd;
+ &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+&quot;payload&quot;: {}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">3788fixu2h.execute-api.ap-south-1.amazonaws.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/profile/upi/fetch-favorites</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile-no&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_rc" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/11 Fetch favorites.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="12 Get complaint Reason Code -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+&quot;device&quot;: {&#xd;
+&quot;app-id&quot;: &quot;com.sarvatra.abc&quot;,&#xd;
+&quot;device-id&quot;: &quot;${__UUID}&quot;,&#xd;
+&quot;os&quot;: &quot;ANDROID&quot;,&#xd;
+&quot;os-version&quot;: &quot;11&quot;,&#xd;
+&quot;manufacture&quot;: &quot;NOKIA&quot;,&#xd;
+&quot;model&quot;: &quot;123&quot;,&#xd;
+&quot;version&quot;: &quot;1.0&quot;,&#xd;
+&quot;location&quot;: &quot;1234567890&quot;,&#xd;
+&quot;fcm-token&quot;: &quot;token&quot;,&#xd;
+&quot;sim-slot&quot;: &quot;120000012202&quot;&#xd;
+},&#xd;
+&quot;user&quot;: {&#xd;
+&quot;abc-profile-id&quot;: &quot;FE5AC0142B19B761&quot;,&#xd;
+&quot;mobile&quot;: &quot;${mobile}&quot;,&#xd;
+&quot;smpd-user&quot;: 3206&#xd;
+},&#xd;
+ &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+&quot;payload&quot;: {}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">3788fixu2h.execute-api.ap-south-1.amazonaws.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/upi/get-complaint-reason-codes</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile-no&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_rc" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/12 Get complaint Reason Code.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="13 Manage payee [action : UPDATE] -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+        &quot;device-id&quot;: &quot;5EC91954-95EC-4298-BDCA-25C5E9A20116&quot;,&#xd;
+        &quot;os&quot;: &quot;IOS&quot;,&#xd;
+        &quot;os-version&quot;: &quot;11&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;SAMSUNG&quot;,&#xd;
+        &quot;model&quot;: &quot;iPhone&quot;,&#xd;
+        &quot;version&quot;: &quot;1.0&quot;,&#xd;
+        &quot;location&quot;: &quot;1234567890&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;fcmToken&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;1&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+         &quot;abc-profile-id&quot;: &quot;9881711245&quot;,&#xd;
+        &quot;mobile&quot;: &quot;9881711245&quot;,&#xd;
+        &quot;smpd-user&quot;: 3126&#xd;
+    },&#xd;
+     &quot;seq-no&quot;: &quot;${__UUID}&quot;,&#xd;
+    &quot;payload&quot;: {&#xd;
+        &quot;action&quot;: &quot;UPDATE&quot;,&#xd;
+       &quot;payee-id&quot;: 265,&#xd;
+        &quot;account-no&quot;: &quot;2004667890002&quot;,&#xd;
+        &quot;ifsc&quot;: &quot;ICICI000100&quot;,&#xd;
+        &quot;name&quot;: &quot;LOADTESTING&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${url}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/profile/upi/manage-payee</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile-no&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 32;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_rc" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/13 Manage payee [action : UPDATE].csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="14 Fetch Payee -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.adityabirlacapital.abconeapp&quot;,&#xd;
+            &quot;device-id&quot;: &quot;5EC91954-95EC-4298-BDCA-25C5E9A20116&quot;,&#xd;
+            &quot;os&quot;: &quot;IOS&quot;,&#xd;
+            &quot;os-version&quot;: &quot;12&quot;,&#xd;
+            &quot;manufacture&quot;: &quot;lg&quot;,&#xd;
+            &quot;model&quot;: &quot;dd12345&quot;,&#xd;
+            &quot;version&quot;: &quot;6.0.48&quot;,&#xd;
+            &quot;location&quot;: &quot;(ddpune)&quot;,&#xd;
+            &quot;fcm-token&quot;: &quot;dd123&quot;,&#xd;
+            &quot;sim-slot&quot;: &quot;1&quot;&#xd;
+    },&#xd;
+    &quot;user&quot;: {&#xd;
+         &quot;abc-profile-id&quot;: &quot;9881711245&quot;,&#xd;
+            &quot;mobile&quot;: &quot;9881711245&quot;,&#xd;
+            &quot;smpd-user&quot;: 3126&#xd;
+    },&#xd;
+    &quot;seq-no&quot;: &quot;${txn}&quot;&#xd;
+}  </stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">3788fixu2h.execute-api.ap-south-1.amazonaws.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/profile/upi/fetch-payee</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile-no&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 35;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_rc" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/14 Fetch Payee.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="15 VPA Suggestions -${__threadNum}" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;device&quot;: {&#xd;
+        &quot;app-id&quot;: &quot;com.srvtbank.abc&quot;,&#xd;
+        &quot;device-id&quot;: &quot;5F057D2726DE7828&quot;,&#xd;
+        &quot;os&quot;: &quot;ANDROID&quot;,&#xd;
+        &quot;os-version&quot;: &quot;11&quot;,&#xd;
+        &quot;manufacture&quot;: &quot;NOKIA&quot;,&#xd;
+        &quot;model&quot;: &quot;123&quot;,&#xd;
+        &quot;version&quot;: &quot;1.0&quot;,&#xd;
+        &quot;location&quot;: &quot;(if available)&quot;,&#xd;
+        &quot;fcm-token&quot;: &quot;fcm-token&quot;,&#xd;
+        &quot;sim-slot&quot;: &quot;sim-slot-number&quot;&#xd;
+    },&#xd;
+    &quot;seq-no&quot;: &quot;ICI${txn}&quot;,&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;abc-profile-id&quot;: &quot;5F057D2726DE7828&quot;,&#xd;
+        &quot;smpd-user&quot;: 3235&#xd;
+    },&#xd;
+    &quot;payload&quot;: {&#xd;
+        &quot;vpa&quot;: &quot;god123@icici&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">3788fixu2h.execute-api.ap-south-1.amazonaws.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/api/upi/vpa-suggestion</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
+          <boolProp name="HTTPSampler.image_parser">false</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <boolProp name="HTTPSampler.md5">false</boolProp>
+          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor -Mobile" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789&quot;;
+int string_length = 10;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;mobile-no&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor-txn" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.util.Random;
+chars = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&quot;;
+int string_length = 32;
+randomstring =&quot;&quot;;
+    for (int i=0; i&lt;string_length; i++) {
+        Random randomGenerator = new Random();
+      int randomInt = randomGenerator.nextInt(chars.length());
+        randomstring += chars.substring(randomInt,randomInt+1);               
+    }
+    
+vars.put(&quot;txn&quot;,randomstring);
+</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_rc" enabled="true">
+            <stringProp name="JSON_PATH">$.rc</stringProp>
+            <stringProp name="EXPECTED_VALUE">&apos;0000&apos;</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Assertion_message" enabled="true">
+            <stringProp name="JSON_PATH">$.message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Transaction Successful</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree " enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Save Data in CSV file" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.samplers.SampleResult
+
+import java.nio.file.Files
+
+import java.nio.file.Paths
+
+import java.nio.file.StandardOpenOption
+
+import java.text.SimpleDateFormat
+
+import java.util.Date
+
+// Define the path to the CSV file
+
+def csvFilePath = &quot;D:/Jenkins-Workspace/UPI-ABC/Current Reports/API-CSV/15 VPA Suggestions.csv&quot;
+
+def headers = &quot;RequestName,URL,Starttime,Endtime,RequestHeader,RequestData,ResponseHeader,ResponseData,ResponseCode,Result,AssertionRC,AssertionMsg&quot;
+
+// Get the previous SampleResult
+
+def prev = prev
+
+def dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;) //(_get formattef date)
+
+
+// Check if the SampleResult is not null
+
+if (prev != null) {
+
+    // Get request and response data
+
+    def requestData = prev.getSamplerData()
+
+    def url=prev.getUrlAsString()
+
+    def responseData = prev.getResponseDataAsString()
+
+    def threadName = prev.getThreadName()
+
+    def httpReqName=prev.getSampleLabel()
+
+    def reqheader=prev.getRequestHeaders()
+
+    def respheader=prev.getResponseHeaders()
+
+    def time1= new Date(prev.getStartTime())
+    String Starttime = dateFormat.format(time1)
+
+    def time2= new Date(prev.getEndTime())
+    String Endtime = dateFormat.format(time2)
+
+    def respcode = prev.getResponseCode()
+
+    def result = prev.isSuccessful()
+
+    def RCassertionResult = prev.getAssertionResults()[0].getFailureMessage()
+    
+    def MsgassertionResult = prev.getAssertionResults()[1].getFailureMessage()
+
+	String a = requestData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	String b = responseData.replace(&quot;\&quot;&quot;, &quot;\&quot;\&quot;&quot;)
+   	
+    
+	
+   
+	if (!Files.exists(Paths.get(csvFilePath))) {
+    Files.write(Paths.get(csvFilePath), (headers + &quot;\n&quot;).getBytes(), StandardOpenOption.CREATE)
+}
+
+    
+
+    
+
+   def csvEntry = &quot;${httpReqName}\&quot;,\&quot;${url}\&quot;,\&quot;${Starttime}\&quot;,\&quot;${Endtime}\&quot;,\&quot;${reqheader}\&quot;,\&quot;${a}\&quot;,\&quot;${respheader}\&quot;,\&quot;${b}\&quot;,\&quot;${respcode}\&quot;,\&quot;${result}\&quot;,\&quot;${RCassertionResult}\&quot;,\&quot;${MsgassertionResult}\&quot;\n&quot;
+
+
+
+    Files.write(Paths.get(csvFilePath), csvEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND)
+ 
+}
+
+ </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
